@@ -1,0 +1,580 @@
+// *****************************
+$break-xs       : 600px;
+$break-gt-xs    : 600px;
+$break-sm       : 960px;
+$break-gt-sm    : 960px;
+$break-md       : 1280px;
+$break-gt-md    : 1280px;
+$break-lg       : 1920px;
+$break-gt-lg    : 1920px;
+$break-xl       : 1920px;
+// *****************************
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+$openSans : 'Open Sans', sans-serif;
+// *****************************
+@mixin xs {
+  @media (max-width: #{$break-xs - 1px}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: #{$break-sm - 1px}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: #{$break-md - 1px}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: #{$break-lg - 1px}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (max-width: #{$break-xl - 1px}) {
+    @content;
+  }
+}
+@mixin md-shadow {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+@mixin md-transition-all {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+@mixin noselect {
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+}
+
+
+html {
+  // font-family: #arimo;
+  // background-color: #141414;
+
+  body {
+    overflow-x: hidden;
+    #content {
+      // background-color: #141414;
+      font-family: $openSans;
+
+      #menu {
+        overflow: hidden;
+        display: none;
+        .name {
+          width: 100%;
+          color: white;
+          font-weight: 200;
+          line-height: 2.1em;
+          padding: 15px;
+          margin-top: 4vw;
+          padding-top: 15vh;
+
+          @include md {
+            line-height: 1.5em;
+          }
+          @include sm {
+            line-height: 1.3em;
+          }
+          .first {
+            font-size: 2em;
+
+            @include sm {
+              font-size: 1.5em;
+            }
+          }
+          .last {
+            font-size: 2.5em;
+            @include lg {
+              font-size: 2em;
+            }
+            @include md {
+              font-size: 1.5em;
+            }
+            @include sm {
+              font-size: 2.0em;
+            }
+          }
+          .caption {
+            font-size: .8em;
+            padding-left: 10px;
+            @include sm {
+              padding-top: 10px;
+              font-size: .8em;
+            }
+          }
+        }
+        .links {
+          width: 100%;
+          height: 500px;
+          color: white;
+          .link {
+            text-align: center;
+            font-size: 1.0em;
+            font-weight: 200;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            @include md-transition-all;
+            i {
+              position: absolute;
+              left: 0;
+              line-height: 40px;
+              margin-left: 4vw;
+              @include lg {
+                margin-left: 2vw;
+              }
+              @include sm {
+                margin-left: 4vw;
+              }
+            }
+            &:hover{
+              background-color: #33F8FF;
+              cursor: pointer;
+              color: black;
+            }
+          }
+        }
+        @include xs {
+          display: block;
+        }
+      }
+      .sidebar {
+        // display: inline;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 15vw;
+        height: 100vh;
+        z-index: 10;
+        // background-color: #2E2E2E;
+        &:hover {
+          background-color: #2E2E2E;
+          @include md-shadow;
+        }
+        .name {
+          width: 100%;
+          color: white;
+          font-weight: 200;
+          line-height: 2.1em;
+          padding: 15px;
+          padding-top: 7vh;
+          @include md {
+            line-height: 1.5em;
+          }
+          @include sm {
+            line-height: 1.3em;
+          }
+          .first {
+            font-size: 2em;
+            @include lg {
+              font-size: 1.5em;
+            }
+            @include md {
+              font-size: 1em;
+            }
+            @include sm {
+              font-size: 1em;
+            }
+          }
+          .last {
+            font-size: 2.5em;
+            @include lg {
+              font-size: 2em;
+            }
+            @include md {
+              font-size: 1.5em;
+            }
+            @include sm {
+              font-size: 1.0em;
+            }
+          }
+          .caption {
+            font-size: .8em;
+            padding-left: 10px;
+            @include sm {
+              font-size: .5em;
+            }
+          }
+        }
+
+        .links {
+          width: 100%;
+          height: 500px;
+          color: white;
+          .link {
+            text-align: center;
+            font-size: 1.0em;
+            font-weight: 200;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            @include md-transition-all;
+            i {
+              position: absolute;
+              left: 0;
+              line-height: 40px;
+              margin-left: 4vw;
+              @include lg {
+                margin-left: 2vw;
+              }
+              @include sm {
+                display: none;
+              }
+            }
+            &:hover{
+              background-color: #33F8FF;
+              cursor: pointer;
+              color: black;
+            }
+          }
+        }
+
+        @include md-transition-all;
+        @include xs {
+          margin-left: -15vw;
+        }
+
+
+
+
+
+      }
+      #panel {
+        margin-left: 15vw;
+        @include xs {
+          margin-left: 0px;
+        }
+        header {
+
+          position: relative;
+          display: none;
+          @include xs {
+            display: flex;
+            // text-align: center;
+          }
+          i {
+            color: #33F8FF;
+            font-size: 38px;
+            display: none;
+            //Hide Button on larger screens
+            @include xs {
+              display: inline-block;
+            }
+            @include noselect;
+
+          }
+          padding-left: 2vw;
+          padding-top: 2vw;
+          padding-bottom: 2vw;
+          span {
+            position: absolute;
+            font-size: 1.8em;
+            font-weight: 200;
+            color: white;
+            right: 4vw;
+            @include noselect;
+
+          }
+        }//End Header
+
+        #view {
+          width: 100%;
+          height: 100vh;
+          padding-bottom: 20px;
+        }
+
+      }
+      //  ------------ COMPONENTS ------------
+      .component-content {
+        width: 100%;
+        height: 200vh;
+        #home {
+          // width: 70vw;
+          padding-left: 4vw;
+          padding-right: 4vw;
+          @include lg {
+            // width: 0vw;
+          }
+          @include md {
+            // width: 70vw;
+          }
+          @include sm {
+            // width: 100vw;
+          }
+          @include xs {
+            width: 100vw;
+            padding-left: 0;
+            padding-right: 0;
+          }
+
+        }
+      }
+    } //End content
+  } // End body
+} // End html
+
+
+
+.grid {
+  width: 100%;
+  height: 100%;
+  margin-left: 10vw;
+  margin: 0 auto;
+  padding-top: 4vw;
+  text-align: center;
+  padding-left: 4vw;
+  @include md{
+  }
+  @include sm{
+    // margin-left: 0px;
+    // width: 99%;
+  }
+  @include xs{
+    margin-left: 0px;
+    padding-top: 0;
+  }
+  .grid-item {
+    display: inline-block;
+    position: relative;
+    margin:5px;
+    float: left;
+    width: 20vw;
+    height: 20vw;
+    // background-color: #BEBEBE;
+    @include md-transition-all;
+
+    // @include md-shadow;
+    // Responsive attributes
+
+    @include md {
+      width: 33vw;
+      height: 33vw;
+    }
+    @include sm {
+      width: 33vw;
+      height: 33vw;
+    }
+    @include xs {
+      margin: 2px;
+      width: 45vw;
+      height: 45vw;
+    }
+    .wrapper {
+      z-index : 10;
+      position : absolute;
+      top : 0;
+      left : 0;
+      background-color: yellow;
+    }
+
+    &:hover {
+      @include xs {
+
+      }
+      cursor: pointer;
+      @include md-shadow;
+    }
+  }
+  .grid-item--width2 {
+    width: calc(40vw + 10px);
+    @include md {
+      width: calc(66vw + 10px);
+    }
+    @include sm {
+      width: calc(66vw + 10px);
+    }
+    @include xs {
+      width: calc(90vw + 4px);
+    }
+  }
+  // overlay
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: hsla(0,0,18,0.7);
+    // background: #606060;
+    z-index: 9;
+    &:hover {
+      background: hsla(0,0,18,0.5);
+    }
+    @include md-transition-all;
+  }
+  .tag {
+    color: #33F8FF;
+    font-weight: 200;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+  }
+  // Grid Classes
+  // Global grid options
+  @mixin grid-image {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      @include noselect;
+      position: relative;
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: 4;
+    }
+  }
+  @mixin grid-caption {
+    .caption {
+      font-family: $openSans;
+      font-size: 2.5em;
+      font-weight: 200;
+      color: white;
+      position: absolute;
+      z-index: 10;
+      @include sm {
+        font-size: 1.7em;
+      }
+      @include noselect;
+
+    }
+  }
+  #grid-about-me {
+    @include grid-image;
+    @include grid-caption;
+  }
+  #grid-gallery {
+    @include grid-image;
+    @include grid-caption;
+
+  }
+  #grid-mars-oasis {
+    @include grid-image;
+    @include grid-caption;
+
+  }
+  #grid-esports {
+    @include grid-image;
+    @include grid-caption;
+  }
+  #grid-vr {
+    @include grid-image;
+    @include grid-caption;
+  }
+  #grid-webgl {
+    @include grid-image;
+    @include grid-caption;
+  }
+  #grid-countdown {
+    @include grid-image;
+    @include grid-caption;
+  }
+  #grid-matrix {
+    @include grid-image;
+    @include grid-caption;
+  }
+}//END grid
+
+@keyframes rotateFall {
+    0%      { transform: rotateZ(0deg); }
+    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(17deg); }
+    60%     { transform: rotateZ(16deg); }
+    100%    { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
+.ng-leave           { animation: slideOutLeft 0.5s both ease-in; z-index: 9999; }
+// Angular Styles
+ng-view {
+  @include md-transition-all;
+}
+
+
+// *****************
+.detail-page{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  
+  .image-wrapper {
+    position: fixed;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      flex-shrink: 0;
+      max-width: 100%;
+     
+    }
+  }
+  .page {
+    position: absolute;
+    // margin-left: 20vw;
+    // margin-top: 20vh;
+    padding: 10px;
+    width: 40vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 3;
+    @include md-shadow;
+    .header {
+      width: 100%;
+      color: black;
+      .back-button {
+        @include md-transition-all;
+        padding: 5px;
+        &:hover {
+          color: white;
+          cursor: pointer;
+          background-color: #33F8FF;
+        }
+      }
+      i {
+        padding-right: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conor Amanatullah</title>
+    <!-- //////////////////// META  \\\\\\\\\\\\\\\\\\\\ -->
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2E2E2E">
+    <meta name="MobileOptimized" content="320">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- //////////////////// FONTS AND STYLES  \\\\\\\\\\\\\\\\\\\\ -->
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.min.css">
+
+    <!-- For Angular Routing Purposes -->
+    <base href="/">
+
+
+  </head>
+  <body ng-app="app">
+    <!-- //////////////////// MAIN CONTENT \\\\\\\\\\\\\\\\\\\\ -->
+
+    <div id="content" ng-controller="MainController">
+
+      <nav id="menu">
+        <div class="name">
+          <div class="first">
+            conor
+          </div>
+          <div class="last">
+            amanatullah
+          </div>
+          <div class="caption">
+            developer / musician / creator
+          </div>
+        </div>
+        <div class="links">
+          <div class="link" ng-click="redirect('https://github.com/conoramanatullah')">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            Github
+          </div>
+          <div class="link" ng-click="redirect('https://www.linkedin.com/in/conor-amanatullah-7b914897
+')">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            LinkedIn
+          </div>
+          <div class="link">
+            <i class="fa fa-headphones" aria-hidden="true"></i>
+            Music
+          </div>
+          <div class="link">
+            <i class="fa fa-paperclip" aria-hidden="true"></i>
+            Resume
+          </div>
+          <div class="link">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            Contact
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+
+        <div class="name">
+          <div class="first">
+            conor
+          </div>
+          <div class="last">
+            amanatullah
+          </div>
+          <div class="caption">
+            developer / musician / creator
+          </div>
+        </div>
+        <div class="links">
+          <div class="link" ng-click="redirect('https://github.com/conoramanatullah')">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            Github
+          </div>
+          <div class="link" ng-click="redirect('https://www.linkedin.com/in/conor-amanatullah-7b914897
+')">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            LinkedIn
+          </div>
+          <div class="link" ng-click="redirect('music')">
+            <i class="fa fa-headphones" aria-hidden="true"></i>
+            Music
+          </div>
+          <div class="link" ng-click="redirect('resume')">
+            <i class="fa fa-paperclip" aria-hidden="true"></i>
+            Resume
+          </div>
+          <div class="link" ng-click="redirect('contact')">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            Contact
+          </div>
+        </div>
+
+
+      </div>
+
+      <main id="panel">
+
+        <header id="header">
+          <i class="material-icons toggle-button">menu</i>
+          <span class="name">Conor Amanatullah</span>
+
+          <!-- <span>Conor Amanatullah</span> -->
+
+        </header>
+        <ng-view></ng-view>
+        <!-- <div id="view"></div> -->
+      </main>
+    </div>
+
+    <!-- //////////////////// SCRIPTS  \\\\\\\\\\\\\\\\\\\\ -->
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+
+    <script src="js/main.min.js"></script>
+    <script src="js/view.js"></script>
